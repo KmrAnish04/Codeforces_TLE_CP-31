@@ -64,8 +64,13 @@ int main(){
 ************************************ INTUTION ************************************
 1. Here, type-2 action and "(i-1)th and (i+1)th cell" rule is our lovely friend, 
    with the help of type 2 acton we will perform minimum type-1 actons. Here if 
-   you do some brainstroming then you will observe that there are only two type 
-   of answers is possible that is weather we have to fill all the empty cells one
+   you do some brainstroming then you will observe that there are only three type 
+   of answers is possible that is 
+   1. No. of all the empty cells (that is we need to fill all empty cells).
+   2. 0 (No need fill any cells, bcoz its already filled)
+   3. 2 (only fill two cells, take advantage of (i+1),(i-1) rule, and fill other cells with type-2 action)
+   
+   So here weather we have to fill all the empty cells one
    by one (it means if n cells are empty then n type-1 operations needed) or otherwise
    the answer will always be 2. Because if the minimum empty cells block length is 
    more than or equal to 3 then with help of given rule which says that "ith cells 

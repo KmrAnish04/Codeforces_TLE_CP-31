@@ -34,10 +34,6 @@ int main(){
 		}
 
 
-		// for (int i = 0; i < arrSize; ++i) cout<<prefixSum[i]<<", ";
-		// cout<<'\n';
-		// for (int i = 0; i < arrSize; ++i) cout<<sufixSum[i]<<", ";
-
 		bool isAnsFound = false;
 		for (int i = 1; i < arrSize; ++i)
 		{
@@ -61,9 +57,32 @@ int main(){
 
 // ************************************ INTUTION ************************************
 /*
-	Using Concept of Prefix and Sufix Sum
-	Take prefix and sufix sum of the array and then compare every corresponding element
-	to check wether they both are even or odd, if one of them corresponding element is 
-	even or odd then print "Yes" and break the loop, otherwise print "No".
+	The goal is to determine if we can split the array into two non-empty parts 
+	such that the sums of the elements in both parts have the same parity (both 
+	even or both odd). Here's the intuition:
+
+	1. Prefix and Suffix Sums: We calculate the prefix sum (sum of elements from the 
+	   start up to each position) and the suffix sum (sum of elements from the end up 
+	   to each position) for the array.
+
+	2. Check Parities: For each possible split point in the array, compare the prefix 
+	   sum of the left part and the suffix sum of the right part.
+
+	3. Parity Condition: If both sums have the same parity (both even or both odd) at 
+	   any split point, it's possible to color the elements such that the sums of each 
+	   color group have the same parity.
+
+	4. Output: If such a split point is found, the answer is "YES". If no such point 
+	   exists after checking all possible splits, the answer is "NO".
+
+	By checking each possible division point in the array and ensuring both parts meet 
+	the parity condition, we can determine if the array can be colored according to the 
+	problem's requirements.
+
+
+
+
+
+
 	
 */

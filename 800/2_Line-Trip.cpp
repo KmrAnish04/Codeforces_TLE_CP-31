@@ -33,12 +33,12 @@ int main(){
 ************************************ INTUTION ************************************
 
 1. Finding the max distance between the gas stations, because the longer distance we need to 
-   cover between the gas stations, the minimum gas tank volume we need to store the gas feul.
-2. At destination point, we need to reach destination and came back to starting point, for that
-   we are finding the distance between last gas station and destination point and then multiplying
-   it with 2, because to came back to starting point we need to first reach destination and then 
-   came back to nearst gas statons from destination point and then from there we can came back to
-   starting point.
+   cover between the gas stations, that minimum gas tank volume we need to store the gas feul.
+2. At destination point, we need to reach destination and came back to last gas station(to come 
+   back to starting point), for that we are finding the distance between last gas station and 
+   destination point and then multiplying it with 2, because to came back to starting point we 
+   need to first reach destination and then came back to nearst gas statons from destination 
+   point and then from there we can came back to starting point.
 3. Edge Case: If there is only one gas station in way, then between way we have only that much max distance to
    cover in mid way. Therefore 'int btwMax=gasStations[0];'
    

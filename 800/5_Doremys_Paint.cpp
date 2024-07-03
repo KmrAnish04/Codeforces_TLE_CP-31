@@ -33,5 +33,26 @@ int main(){
 
 // ************************************ INTUTION ************************************
 /*
+	Here In the array, to make it good array, only two type of numbers should be 
+	presetn that is 'a' and 'b', if any third type of number will be present then
+	it will be impossible to make it a good array.
+	Even if there are two type of numbers are present then also we can't directly 
+	say that the array is good array. Even if there are two type of numers present
+	we still need to check weather they are present in a balanced frequency or not.
+	Because these two type of elements should be present in a frequency that there
+	absoulute difference of their frequency should be 0 or 1 (or less than eqal to 1).
+	
+	Or In other words, you can say that one type of number should be present n/2 times 
+	and other number should be present n/2 times if n is even and (n/2 + 1) times if 
+	n is odd. Otherwise its answer is "No".
+	Code:
+	if(mp.size()>2) cout<<"No"<<endl;
+	else if(
+		(mp.size()==1) || 
+		(sizeOfArr/2==newArr[0] && (sizeOfArr/2)+1==newArr[1]) || 
+		(sizeOfArr/2==newArr[1] && (sizeOfArr/2)+1==newArr[0]) ||
+		(sizeOfArr/2==newArr[0] && sizeOfArr/2==newArr[1])
+	) {cout<<"Yes"<<endl;}
+	else cout<<"No"<<endl;
 	
 */
