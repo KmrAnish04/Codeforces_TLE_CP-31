@@ -10,25 +10,22 @@ using namespace std;
 
 void solve(){
 	// ************************************ Taking Inputs ************************************
-	int n, m;
-	cin>>n>>m;
+	int n, k;
+	cin>>n>>k;
 
-	string x;
-	string s;
+	vector<int> arr(n);
+	for (int i = 0; i < n; ++i) cin>>arr[i];
 	
-	cin>>x;
-	cin>>s;
 	// ************************************ Solution Starts Here ************************************
 
-	for(int i=0; i<6; i++){
-		if(x.find(s) != string::npos){
-			cout<<i<<"\n";
+	for(int i=0; i<arr.size(); i++){
+		if(arr[i] == k){
+			cout<<"Yes\n";
 			return;
 		}
-		x += x;
 	}
 
-	cout<<-1<<"\n";
+	cout<<"No\n";
 	return;
 	// cout<<"************* Solution Ends Here *************\n\n";
 }
@@ -47,5 +44,10 @@ int main(){
 
 // ************************************ INTUTION ************************************
 /*
-	
+	Even if there is one element in the array which
+	is equal to k, then it means atleast there is a
+	one subsegment of size [k] in which no. of occurences
+	of k is more than no. of occurences is any other element
+	which is zero in case of [k] subsegment, it means answer
+	Yes.
 */

@@ -10,26 +10,34 @@ using namespace std;
 
 void solve(){
 	// ************************************ Taking Inputs ************************************
-	int n, m;
-	cin>>n>>m;
-
-	string x;
-	string s;
+	int n;
+	cin>>n;
 	
-	cin>>x;
-	cin>>s;
+	string str;
+	cin>>str;
+
 	// ************************************ Solution Starts Here ************************************
 
-	for(int i=0; i<6; i++){
-		if(x.find(s) != string::npos){
-			cout<<i<<"\n";
+	int left=0, right=n-1;
+	while(left<right){
+		if(str[left] == str[right]){
+			cout<<right-left+1<<"\n";
 			return;
 		}
-		x += x;
+		left++;
+		right--;
 	}
 
-	cout<<-1<<"\n";
+	if(left==right){
+		cout<<1<<"\n";
+		return;
+	}
+
+	// only case left when left>right
+	cout<<0<<"\n";
 	return;
+
+
 	// cout<<"************* Solution Ends Here *************\n\n";
 }
 
@@ -47,5 +55,5 @@ int main(){
 
 // ************************************ INTUTION ************************************
 /*
-	
+	Simple Two Pointers Approach
 */

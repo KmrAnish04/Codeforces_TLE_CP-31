@@ -10,26 +10,31 @@ using namespace std;
 
 void solve(){
 	// ************************************ Taking Inputs ************************************
-	int n, m;
-	cin>>n>>m;
-
-	string x;
-	string s;
+	int n;
+	cin>>n;
 	
-	cin>>x;
-	cin>>s;
+	int xorOfAll = 0;
+	for(int i=0; i<n; i++){
+		int ele;
+		cin>>ele;
+		xorOfAll ^= ele;
+	}
+	// cout<<xorOfAll<<"\n";
 	// ************************************ Solution Starts Here ************************************
 
-	for(int i=0; i<6; i++){
-		if(x.find(s) != string::npos){
-			cout<<i<<"\n";
-			return;
-		}
-		x += x;
+	if(n%2 != 0){
+		cout<<xorOfAll<<"\n";
+		return;
+	}
+	
+	if(xorOfAll==0){
+		cout<<0<<"\n"; // any integer b/w 0 ≤ x < 2^8
+		return;
 	}
 
 	cout<<-1<<"\n";
 	return;
+	
 	// cout<<"************* Solution Ends Here *************\n\n";
 }
 
